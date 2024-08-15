@@ -7,12 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 import src.test.java.org.automation.utility.Wait;
 
 public class GoogleSearchPage {
-    WebDriver driver;
     Wait wait;
     public GoogleSearchPage(WebDriver driver){
-        this.driver = driver;
+        PageFactory.initElements(driver,this);
     }
-    @FindBy(name = "q") WebElement searchTextBox;
+    @FindBy(name = "e") WebElement searchTextBox;
 
     public void searchText(String text){
         wait = new Wait();
